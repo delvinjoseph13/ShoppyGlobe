@@ -1,4 +1,4 @@
-# React + Vite
+# ShoppyGlobe
 
 This is a modern e-commerce application built with React, Redux, and React Router. <br/>
 The project leverages lazy loading for improved performance and better user experience.<br/>
