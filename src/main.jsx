@@ -5,16 +5,12 @@ import App from './App.jsx'
 import PageNotFound from './components/PageNotFound.jsx'
 import Checkout from './components/CheckOutPage.jsx'
 
-const Home=lazy(()=>import('./components/Home.jsx'));
-const ProductList=lazy(()=>import('./components/ProductList.jsx'));
-const ProductDetail=lazy(()=>import('./components/ProductDetails.jsx'));
-const CartItem=lazy(()=>import('./components/CartItem.jsx'));
+const Home=lazy(()=>import("./components/Home.jsx"));
+const ProductList=lazy(()=>import("./components/ProductList.jsx"));
+const ProductDetail=lazy(()=>import("./components/ProductDetails.jsx"));
+const CartItem=lazy(()=>import("./components/CartItem.jsx"));
 
-const SuspenseWrapper = ({ children }) => (
-  <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
-    {children}
-  </Suspense>
-);
+
 
 
 
@@ -26,39 +22,39 @@ const appRoute=createBrowserRouter([
       {
         index:true,
         element:(
-          <SuspenseWrapper>
+          <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
             <Home/>
-          </SuspenseWrapper>
+          </Suspense>
         )
       },
       {
         path:'/products',
         element:(
-          <SuspenseWrapper>
+          <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
             <ProductList/>
-          </SuspenseWrapper>
+          </Suspense>
         )
 
       },{
         path:'/products/:id',
         element:(
-          <SuspenseWrapper>
+          <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
             <ProductDetail/>
-          </SuspenseWrapper>
+          </Suspense>
         )
       },{
         path:'/cart',
         element:(
-          <SuspenseWrapper>
+          <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
             <CartItem/>
-          </SuspenseWrapper>
+          </Suspense>
         )
       },{
         path:'/checkout',
         element:(
-          <SuspenseWrapper>
+          <Suspense fallback={<div className='text-center mt-10 text-xl'>Loading...</div>}>
             <Checkout/>
-          </SuspenseWrapper>
+          </Suspense>
         )
       }
 
